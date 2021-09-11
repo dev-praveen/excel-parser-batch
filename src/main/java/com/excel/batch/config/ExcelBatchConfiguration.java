@@ -3,6 +3,7 @@ package com.excel.batch.config;
 import com.excel.batch.models.Student;
 import com.excel.batch.models.StudentDTO;
 import com.excel.batch.repository.StudentRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.*;
@@ -26,22 +27,23 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableBatchProcessing
+@AllArgsConstructor
 public class ExcelBatchConfiguration {
 
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
+    //@Autowired
+    private final JobBuilderFactory jobBuilderFactory;
 
-    @Autowired
-    private StepBuilderFactory stepBuilderFactory;
+    //@Autowired
+    private final StepBuilderFactory stepBuilderFactory;
 
-    @Autowired
-    private StudentRepository studentRepository;
+    //@Autowired
+    private final StudentRepository studentRepository;
 
-    @Autowired
-    private PlatformTransactionManager platformTransactionManager;
+    //@Autowired
+    private final PlatformTransactionManager platformTransactionManager;
 
-    @Autowired
-    private DataSource dataSource;
+    //@Autowired
+    private final DataSource dataSource;
 
     @Bean
     public ItemReader<StudentDTO> excelStudentReader() {
