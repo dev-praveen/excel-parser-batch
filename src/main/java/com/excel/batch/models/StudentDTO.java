@@ -5,7 +5,8 @@ import lombok.Data;
 @Data
 public class StudentDTO {
 
-    private String emailAddress;
     private String name;
+    private String emailAddress;
     private String purchasedPackage;
+
 }

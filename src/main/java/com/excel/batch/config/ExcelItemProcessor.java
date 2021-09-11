@@ -9,12 +9,14 @@ import org.springframework.batch.item.ItemProcessor;
 public class ExcelItemProcessor implements ItemProcessor<StudentDTO, Student> {
 
     @Override
-    public Student process(final StudentDTO studentDTO) throws Exception {
+    public Student process(final StudentDTO studentDTO) {
 
+        log.info("=======student dto object============ "+studentDTO);
         Student student = new Student();
         student.setEmailAddress(studentDTO.getEmailAddress());
         student.setName(studentDTO.getName());
 
+        log.info("=======student object============ "+student);
         return student;
     }
 }
